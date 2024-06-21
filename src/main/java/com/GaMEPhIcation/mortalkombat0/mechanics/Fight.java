@@ -34,34 +34,6 @@ public class Fight {
         
     }
     
-    public void makeMove(Move move, Action action) {
-        switch(move) {
-            case PLAYER -> doActionAsPlayer(action);
-            case ENEMY -> doActionAsEnemy(action);
-        }
-        
-        player.getFighter().decreaseDebuffTimer();
-        enemy.decreaseDebuffTimer();
-    }
-    
-    public void doActionAsPlayer(Action action) {
-        switch(action) {
-            case ATTACK -> attack(player.getFighter(), enemy, 1);
-            case DEFEND -> player.getFighter().setState(Action.DEFEND);
-            case INVENTORY -> player.getFighter().setState(action);
-            case WEAKENING -> setWeakening(player.getFighter(), enemy);
-            
-        }
-    }
-    
-    public void doActionAsEnemy(Action action){
-        switch(action){
-            case ATTACK -> attack(enemy, player.getFighter(), 1);
-            case DEFEND -> enemy.setState(Action.DEFEND);
-            case WEAKENING -> setWeakening(enemy, player.getFighter());
-            case REGENERATE -> regenerate();
-        }
-    };
     
     public void attack(Fighter attacker, Fighter attacked, double coefficient) {
         attacked.setHealth(-attacker.getAttack() * coefficient);

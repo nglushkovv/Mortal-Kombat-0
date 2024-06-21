@@ -123,7 +123,7 @@ public class JFrames extends javax.swing.JFrame {
         ImageIcon icon = new ImageIcon(this.getClass().getResource("/backgrounds/logo.png"));
         this.setIconImage(icon.getImage());
         mainFrame.setSize(1070,630);
-        mainFrame.setTitle("Бой");
+        mainFrame.setTitle("Mortal Kombat 0");
         mainFrame.setIconImage(icon.getImage());
         winnersTableDialog.setIconImage(icon.getImage());
         congratulationsDialog.setIconImage(icon.getImage());
@@ -1528,6 +1528,7 @@ public class JFrames extends javax.swing.JFrame {
         Item[] bag = player.getFighter().getBag();
         reviveRadioButton.setText("Крест возрождения, " + bag[2].getCount() + " шт");
         turnOnActionButtons();
+        moveLabel.setText("Move: " + game.getMoveManager().getCurrentMove());
         
         try {
             drawHPLabelsAndBars();
