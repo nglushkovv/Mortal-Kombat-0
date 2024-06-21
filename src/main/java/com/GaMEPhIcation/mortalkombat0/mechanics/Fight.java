@@ -14,11 +14,6 @@ public class Fight {
     private final Player player;
     private final Fighter enemy;
     
-    public enum Move{
-        PLAYER,
-        ENEMY
-    }
-    
     public enum Action{
         ATTACK,
         DEFEND,
